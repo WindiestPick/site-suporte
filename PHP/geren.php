@@ -39,7 +39,7 @@ $result = mysqli_query($conn, "SELECT * FROM tickets WHERE `status` = 1");
                         <ul>
                             <li><a href="./chamadosUser/meusChamados.php">Meus Chamados</a></li>
                             <li><a href='./chamadosSuporte/meusAtendimentos.php'>Meus Atendimentos</a></li>
-                            <li><a href="elements.html">Alterar senha</a></li>
+                            <li><a href="./login_register/alterarSenha.php">Alterar senha</a></li>
                             <li>
                                 <a href="#">Abrir ticket</a>
                                 <ul>

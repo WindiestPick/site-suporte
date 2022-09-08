@@ -9,9 +9,9 @@ function logout() {
         exit.innerHTML = "<?php session_destroy();?>";
         out.href = "../../index.html";
     } else {
-        out.href = "./home.php";
+        out.href = "../home.php";
     }
 }
 
-out.href = "../index.html";
+out.href = "../../index.html";
 out.onclick = logout;

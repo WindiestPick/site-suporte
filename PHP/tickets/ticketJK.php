@@ -36,9 +36,14 @@ $adm = $_SESSION['adm']
                     <li>
                         <a href="#" class="icon solid fa-angle-down">Opções</a>
                         <ul>
-                            <li><a href="generic.html">Chamados em aberto</a></li>
-                            <li><a href="contact.html">Chamados encerrados</a></li>
-                            <li><a href="elements.html">Alterar senha</a></li>
+                            <li><a href="../chamadosUser/meusChamados.php">Meus Chamados</a></li>
+                            <?php 
+                                if($adm == 1){
+                                    echo "<li><a href='../chamadosSuporte/meusAtendimentos.php?sts=2'>Meus Atendimentos</a></li>";
+                                    echo "<li><a href='../geren.php'>Abrir Gerenciador</a></li>";
+                                }
+                            ?>
+                            <li><a href="../login_register/alterarSenha.php">Alterar senha</a></li>
                             <li>
                                 <a href="#">Abrir ticket</a>
                                 <ul>
@@ -103,6 +108,7 @@ $adm = $_SESSION['adm']
     </div>
 
     <!-- Scripts -->
+    <script src="../../js/sair.js"></script>
     <script src="../../js/tickets.js"></script>
     <script src="../../assets/js/jquery.min.js"></script>
     <script src="../../assets/js/jquery.dropotron.min.js"></script>

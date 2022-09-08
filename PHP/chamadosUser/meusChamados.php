@@ -41,11 +41,11 @@ $result = mysqli_query($conn, "SELECT * FROM tickets WHERE `userID` = $id");
                         <ul>
                             <?php 
                                 if($adm == 1){
-                                    echo "<li><a href='../chamadosSuporte/meusAtendimentos.php'>Meus Atendimentos</a></li>";
+                                    echo "<li><a href='../chamadosSuporte/meusAtendimentos.php?sts=2'>Meus Atendimentos</a></li>";
                                     echo "<li><a href='../geren.php'>Abrir Gerenciador</a></li>";
                                 }
                             ?>
-                            <li><a href="./login_register/alterarSenha.php">Alterar senha</a></li>
+                            <li><a href="../login_register/alterarSenha.php">Alterar senha</a></li>
                             <li>
                                 <a href="#">Abrir ticket</a>
                                 <ul>
@@ -53,6 +53,9 @@ $result = mysqli_query($conn, "SELECT * FROM tickets WHERE `userID` = $id");
                                     <li><a href="../tickets/ticketSK.php">Supermercado Kauan</a></li>
                                     <li><a href="../tickets/ticketJK.php">JK Distribuidora</a></li>
                                 </ul>
+                            </li>
+                            <li>
+                                <a id="logout">Sair</a>
                             </li>
                         </ul>
                     </li>
@@ -115,6 +118,7 @@ $result = mysqli_query($conn, "SELECT * FROM tickets WHERE `userID` = $id");
     </div>
 
     <!-- Scripts -->
+    <script src="../../js/sair.js"></script>
     <script src="../../assets/js/jquery.min.js"></script>
     <script src="../../assets/js/jquery.dropotron.min.js"></script>
     <script src="../../assets/js/jquery.scrollex.min.js"></script>

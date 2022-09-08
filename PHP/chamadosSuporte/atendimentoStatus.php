@@ -89,6 +89,10 @@ while($row = $user->fetch_assoc()){
                             echo "<h4>Descrição:</h4> ";
                             echo "<p class='indown'>" . $row["description"] . "</p>";
                             $status = $row["status"];
+                            if($row["status"] == 3){
+                                echo "<h4>Solução:</h4>";
+                                echo "<p class='indown'>" . $row["solution"] . "</p>";
+                            }
                         }
                     }else{
                         echo 'Sem dados a serem informados';
@@ -102,7 +106,7 @@ while($row = $user->fetch_assoc()){
                             echo '<a id="botao" class="button alt tbtn" href="../tickets/fecharTickets.php?idcha='.$idcha.'">Fechar Chamado</a>';
                         }
                     ?>
-                    <a id="botao" class="button alt tbtn" href="./meusAtendimentos.php">Voltar</a>
+                    <a id="botao" class="button alt tbtn" href="./meusAtendimentos.php?sts=2">Voltar</a>
                     <input type="hidden" value='<?php echo $idcha;?>' id="chamado" />
                     <input type="hidden" value='<?php echo $id;?>' id="usuario"/>
                 </div>
