@@ -34,7 +34,7 @@ $adm = $_SESSION['adm'];
                             <li><a href="./chamadosUser/meusChamados.php">Meus Chamados</a></li>
                             <?php 
                                 if($adm == 1){
-                                    echo "<li><a href='./chamadosSuporte/meusAtendimentos.php'>Meus Atendimentos</a></li>";
+                                    echo "<li><a href='./chamadosSuporte/meusAtendimentos.php?sts=2'>Meus Atendimentos</a></li>";
                                     echo "<li><a href='./geren.php'>Abrir Gerenciador</a></li>";
                                 }
                             ?>
@@ -58,8 +58,8 @@ $adm = $_SESSION['adm'];
 
         <section id="main" class="container">
             <div class="row">
+                
                 <div class="col-6 col-12-narrower">
-
                     <section class="box special">
                         <span class="image featured"><img src="../images/pic02.jpg" alt="" /></span>
                         <h3><strong>Abrir ticket referente a<br>JJ Distribuidora</strong></h3>

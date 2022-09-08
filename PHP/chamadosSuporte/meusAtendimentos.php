@@ -7,7 +7,9 @@ $stname = $_SESSION['stname'];
 $id = $_SESSION['userID'];
 $adm = $_SESSION['adm'];
 
-$result = mysqli_query($conn, "SELECT * FROM tickets WHERE `suporteID` = $id AND `status` = 2");
+$status = $_GET["sts"];
+
+$result = mysqli_query($conn, "SELECT * FROM tickets WHERE `suporteID` = $id AND `status` = $status");
 $nameSuporte = null;
 
 
@@ -61,8 +63,18 @@ $nameSuporte = null;
         <section id="main" class="gen container">
             <header>
                 <h2>Gerenciador de Chamados</h2>
+                <p hidden id="exit"></p>
             </header>
             <div class="box">
+                <div>
+                    <form action="./meusAtendimentos.php" method="get">
+                        <input type="radio" name="sts" value="2">
+                        <label>Em atendimentos</label><br>
+                        <input type="radio" name="sts" value="3">
+                        <label>Fechados</label><br>
+                        <input type="submit" value="Filtrar" id="filtro">
+                    </form>
+                </div>
                 <div id="objeto">
                         <?php 
                         if ($result->num_rows > 0) {
@@ -120,6 +132,7 @@ $nameSuporte = null;
     </div>
 
     <!-- Scripts -->
+    <script src="../../js/sair.js"></script>
     <script src="../../assets/js/jquery.min.js"></script>
     <script src="../../assets/js/jquery.dropotron.min.js"></script>
     <script src="../../assets/js/jquery.scrollex.min.js"></script>

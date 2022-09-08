@@ -1910,19 +1910,6 @@ input[type="radio"] {
     z-index: -1;
 }
 
-input[type="checkbox"]+label,
-input[type="radio"]+label {
-    text-decoration: none;
-    color: #777;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 1em;
-    font-weight: 300;
-    padding-left: 2.55em;
-    padding-right: 0.75em;
-    position: relative;
-}
-
 input[type="checkbox"]+label:before,
 input[type="radio"]+label:before {
     -moz-osx-font-smoothing: grayscale;
