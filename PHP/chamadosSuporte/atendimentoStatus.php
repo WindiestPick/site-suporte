@@ -88,6 +88,7 @@ while($row = $user->fetch_assoc()){
                             echo "<h2 class='inmid'>" . $row["title"] . " </h2> ";
                             echo "<h4>Descrição:</h4> ";
                             echo "<p class='indown'>" . $row["description"] . "</p>";
+                            $status = $row["status"];
                         }
                     }else{
                         echo 'Sem dados a serem informados';
@@ -96,15 +97,25 @@ while($row = $user->fetch_assoc()){
                     ?>
                 </div>
                 <div>
-                    <a id="botao" class="button alt tbtn" href="../tickets/fecharTickets.php?idcha=<?php echo $idcha;?>">Fechar Chamado</a>
+                    <?php
+                        if($status == 2){
+                            echo '<a id="botao" class="button alt tbtn" href="../tickets/fecharTickets.php?idcha='.$idcha.'">Fechar Chamado</a>';
+                        }
+                    ?>
                     <a id="botao" class="button alt tbtn" href="./meusAtendimentos.php">Voltar</a>
                     <input type="hidden" value='<?php echo $idcha;?>' id="chamado" />
                     <input type="hidden" value='<?php echo $id;?>' id="usuario"/>
                 </div>
             </div>
-            <div>
-                <iframe src="../chat/index.php?idcha=<?php echo $idcha;?>&mensagem=null" height="250px" width="100%" title="Iframe Example"></iframe>
-            </div>
+            <?php
+                if($status == 2){
+                    echo '<div>';
+                    echo '<iframe src="../chat/index.php?idcha='.$idcha.'&mensagem=null" height="250px" width="100%" title="Iframe Example"></iframe>';
+                    echo '</div>';
+                }
+            
+            ?>
+            
         </section>
 
         <!-- Footer -->

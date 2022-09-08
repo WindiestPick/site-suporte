@@ -7,11 +7,12 @@ $stname = $_SESSION['stname'];
 $id = $_SESSION['userID'];
 $adm = $_SESSION['adm'];
 
-$result = mysqli_query($conn, "SELECT * FROM tickets WHERE `suporteID` = $id");
+$result = mysqli_query($conn, "SELECT * FROM tickets WHERE `suporteID` = $id AND `status` = 2");
+$nameSuporte = null;
+
+
 
 ?>
-
-
 
 <!DOCTYPE HTML>
 
@@ -70,15 +71,23 @@ $result = mysqli_query($conn, "SELECT * FROM tickets WHERE `suporteID` = $id");
                             echo '<tr>';
                             echo '<td>Ticket</td>';
                             echo '<td>Empresa</td>';
+                            echo '<td>Usuário</td>';
                             echo '<td>Titulo do chamado</td>';
                             echo '<td>Status</td>';
                             echo '<td></td>';
                             echo '</tr>';
                             while($row = $result->fetch_assoc()) {
+                                $user = mysqli_query($conn, "SELECT * FROM user WHERE ID = " . $row["userID"]);
+                                $nameUser;
+                                while($row2 = $user->fetch_assoc()){
+                                    $nameUser = $row2["name"] . " " . $row2["lastName"];
+                                    $idUser = $row2["ID"];
+                                }
                                 //id, valor, quantidade, nome, fornecedor
                                 echo '<tr>';
                                 echo "<td>" . $row["ID"] . "</td>";
                                 echo "<td>" . $row["enterprise"] . " </td> ";
+                                echo "<td>" . $nameUser . "</td>";
                                 echo "<td>" . $row["title"] . " </td> ";
                                 if($row["status"] == 1){
                                     echo "<td>Aberto</td>";

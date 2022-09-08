@@ -43,9 +43,9 @@ $result = mysqli_query($conn, "SELECT * FROM tickets WHERE `status` = 1");
                             <li>
                                 <a href="#">Abrir ticket</a>
                                 <ul>
-                                    <li><a href="ticketJJ.php">JJ Distribuidora</a></li>
-                                    <li><a href="ticketSK.php">Supermercado Kauan</a></li>
-                                    <li><a href="ticketJK.php">JK Distribuidora</a></li>
+                                    <li><a href="./tickets/ticketJJ.php">JJ Distribuidora</a></li>
+                                    <li><a href="./tickets/ticketSK.php">Supermercado Kauan</a></li>
+                                    <li><a href="./tickets/ticketJK.php">JK Distribuidora</a></li>
                                 </ul>
                             </li>
                         </ul>

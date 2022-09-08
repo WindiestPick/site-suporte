@@ -106,7 +106,12 @@ if ($suporte != null){
                             echo "</tr>";
                             echo "</table>";
                             echo "<h1 class='inmid'>" . $row["title"] . " </h1> ";
+                            echo "<h4>Descrição:</h4>";
                             echo "<p class='indown'>" . $row["description"] . "</p>";
+                            if($row["status"] == 3){
+                                echo "<h4>Solução:</h4>";
+                                echo "<p class='indown'>" . $row["solution"] . "</p>";
+                            }
                             $status = $row["status"];
                         }
                     }else{
@@ -116,9 +121,7 @@ if ($suporte != null){
                     ?>
                 </div>
                 <div>
-                    
-                    <a id="botao" class="button alt tbtn" onclick="atendimento()">Atender Chamado</a>
-                    <a id="botao" class="button alt tbtn" href="./meusChamados.php">Voltar</a>
+                    <a class="button alt tbtn" href="./meusChamados.php">Voltar</a>
                     <input type="hidden" value='<?php echo $idcha;?>' id="chamado" />
                     <input type="hidden" value='<?php echo $id;?>' id="usuario"/>
                 </div>

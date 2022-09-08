@@ -11,7 +11,8 @@ $sql = mysqli_query($conn,"UPDATE `tickets` SET `status`= 3, `solution` =  '$des
 $result = mysqli_query($conn,"SELECT * FROM chat WHERE `ticketID` = $idcha");
 
 while($row = $result->fetch_assoc()){
-    $chat = mysqli_query($conn, "DELETE FROM `mensagens` WHERE chatID = " . $row['ID']);
+    $bd1 = mysqli_query($conn, "DELETE FROM `mensagens` WHERE chatID = " . $row['ID']);
+    $bd2 = mysqli_query($conn, "DELETE FROM `chat` WHERE ID = " . $row['ID']);
 }
 
 
