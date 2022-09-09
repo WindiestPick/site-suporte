@@ -36,6 +36,7 @@ while($row = $user->fetch_assoc()){
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="icon" type="image" href="../images/logo suporte.png">
 </head>
 
 <body class="is-preload">

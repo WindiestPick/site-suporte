@@ -22,6 +22,7 @@ $result = mysqli_query($conn, "SELECT * FROM tickets WHERE `status` = 1");
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="icon" type="image" href="../images/logo suporte.png">
 </head>
 
 <body class="is-preload">
@@ -38,7 +39,7 @@ $result = mysqli_query($conn, "SELECT * FROM tickets WHERE `status` = 1");
                         <a href="#" class="icon solid fa-angle-down">Opções</a>
                         <ul>
                             <li><a href="./chamadosUser/meusChamados.php">Meus Chamados</a></li>
-                            <li><a href='./chamadosSuporte/meusAtendimentos.php'>Meus Atendimentos</a></li>
+                            <li><a href='./chamadosSuporte/meusAtendimentos.php?sts=2'>Meus Atendimentos</a></li>
                             <li><a href="./login_register/alterarSenha.php">Alterar senha</a></li>
                             <li>
                                 <a href="#">Abrir ticket</a>
